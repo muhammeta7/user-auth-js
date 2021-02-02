@@ -1,0 +1,32 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "js-user-auth",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"It's a test!\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammeta7/user-auth-js.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "Muhammet Aydin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhammeta7/user-auth-js/issues",
+    "author": "Saurabh Mhatre",
+    "license": "ISC",
+    "dependencies": {
+      "bcrypt": "4.0.1",
+      "body-parser": "1.19.0",
+      "cors": "2.8.5",
+      "dotenv": "8.2.0",
+      "express": "4.17.1",
+      "jsonfile": "6.0.1"
+    }
+  },
+  "homepage": "https://github.com/muhammeta7/user-auth-js#readme"
+}
