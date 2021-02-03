@@ -1,20 +1,23 @@
 // app.js
-var http = require('http');
 const express = require('express')
-var fs = require('fs');
-const port = 3000;
+const cors = require("cors");
+const path = require("path")
+const logger = require("morgan");
+const PORT = process.env.PORT || 3000;
+
 // Create Express app
-const app = express()
+const app = express();
 
-const server = http.createServer((req, res) => {
-    res.writeHead(200, { 'content-type': 'text/html' })
-    fs.createReadStream('index.html').pipe(res)
-})
+app.get("/*", function (req, res) {
+    res.sendFile(path.join(__dirname + "/view/public/index.html"));
+});
 
-server.listen(port, () => console.log('Server running on port 3000!'))
+app.use(logger('dev'));
+app.use(cors());
 
-// // Start the Express server
-// app.listen(3000, () => console.log('Server running on port 3000!'))
+
+app.listen(PORT, () => console.log('Server running on port 3000!'))
+
 
 
 
