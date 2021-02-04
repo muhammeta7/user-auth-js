@@ -1,12 +1,19 @@
 // app.js
 const express = require('express');
+var exphbs  = require('express-handlebars');
 const app = express();
 const api_router = require('./routes');
 const cors = require("cors");
-const path = require("path");
 const logger = require("morgan");
 const { setup } = require('./db/setup');
 const body_parser = require('body-parser');
+// HandleBars
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+app.get('/', function (req, res) {
+    res.render('home');
+});
+
 
 app.use(express.json());
 app.use(logger('dev'));
