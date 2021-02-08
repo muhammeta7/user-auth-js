@@ -7,6 +7,8 @@ const cors = require("cors");
 const logger = require("morgan");
 const { setup } = require('./db/setup');
 const body_parser = require('body-parser');
+const path = require('path');
+
 // HandleBars
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
@@ -14,7 +16,7 @@ app.get('/', function (req, res) {
     res.render('home');
 });
 
-
+app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.json());
 app.use(logger('dev'));
 app.use(cors());
